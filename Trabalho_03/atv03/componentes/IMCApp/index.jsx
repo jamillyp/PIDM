@@ -1,16 +1,69 @@
 import React, { Component } from 'react';
-import {View, Text} from 'react-native';
+import {View, Text, TextInput, Button, StyleSheet, Alert} from 'react-native';
 import IMCCalc from '../IMCCalc';
 
 export default class IMCApp extends Component {
+    constructor(props){
+        super(props);
+        this.state = {altura: null, peso: null};
+    };
+    calcularImc = ()=>{
+        alert('não fiz essa parte! perdão! rs')
+    }
+    
     render() {
         return (
-            <View>
-                <Text>IMC: </Text>
-                {/* TextImput para pegar o peso e a altura do usuário e um botão para calcular */}
+            <View style={styles.container}>
+                <Text style={styles.headerText}><h1>Calcule seu IMC</h1></Text>
 
-                <IMCCalc />
+                <TextInput
+                    style={styles.textInput}
+                    placeholder='Digite seu peso'
+                    onChangeText={(peso) => this.setState({peso})}
+                /><br />
+                <TextInput
+                    style={styles.textInput}
+                    placeholder='Digite sua altura'
+                    onChangeText={(altura) => this.setState({altura})}>
+                </TextInput>
+
+                <View style={styles.viewButton}>
+                    <Button 
+                        title='calcular'
+                        onPress={()=>{this.calcularImc()}}  
+                    />
+                </View>
+
+                <IMCCalc peso={this.state.peso} altura={this.state.altura}/>
+
             </View>
         )
     }
 }
+
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        justifyContent: "center",
+        alignItems: "center",
+        backgroundColor: "#e5e5e5"
+        },
+    headerText: {
+        fontSize: 20,
+        textAlign: "center",
+        margin: 10,
+        fontWeight: "bold"
+        },
+    textInput: {
+        height: 45,
+        width: "95%",
+        borderColor: "gray",
+        borderWidth: 2,
+        paddingLeft: 20
+        },
+    viewButton: {
+        width: "93%",
+        margin: 15,
+        backgroundColor: "red"
+    }
+});
