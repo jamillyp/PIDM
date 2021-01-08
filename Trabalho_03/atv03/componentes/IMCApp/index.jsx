@@ -5,10 +5,18 @@ import IMCCalc from '../IMCCalc';
 export default class IMCApp extends Component {
     constructor(props){
         super(props);
-        this.state = {altura: null, peso: null};
+        this.state = {
+            altura: null, 
+            peso: null, 
+            alturaInput: null, //para pegar altura do textInput
+            pesoInput: null //para pegar peso do textInput
+        };
     };
     calcularImc = ()=>{
-        alert('não fiz essa parte! perdão! rs')
+        this.setState({
+            peso: this.state.pesoInput,
+            altura: this.state.alturaInput,
+        })
     }
     
     render() {
@@ -19,12 +27,12 @@ export default class IMCApp extends Component {
                 <TextInput
                     style={styles.textInput}
                     placeholder='Digite seu peso'
-                    onChangeText={(peso) => this.setState({peso})}
+                    onChangeText={(pesoInput) => this.setState({pesoInput})}
                 /><br />
                 <TextInput
                     style={styles.textInput}
                     placeholder='Digite sua altura'
-                    onChangeText={(altura) => this.setState({altura})}>
+                    onChangeText={(alturaInput) => this.setState({alturaInput})}>
                 </TextInput>
 
                 <View style={styles.viewButton}>
