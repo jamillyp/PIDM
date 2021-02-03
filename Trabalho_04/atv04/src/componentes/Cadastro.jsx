@@ -1,71 +1,57 @@
-import React, { useState } from 'react';
-import { View, StyleSheet, TextInput, Text, TouchableHighlight, Modal, Alert } from 'react-native';
+import React, { Component } from 'react';
+import { View, StyleSheet, TextInput, Text, TouchableHighlight } from 'react-native';
 
-export default function Cadastro() {
-    const [modalVisible, setModalVisible] = useState(false);
-    
-    return (
+export default class Cadastro extends Component {
+    constructor(props){
+        super(props);
+        this.state = {
+            nome: null,
+            idade: null,
+            email: null,
+        }
+    }
+    render(){
+        return (
         <View style={estiloCadastro.container}>                
             
             <TextInput
             style={estiloCadastro.estiloText}
             placeholder='Digite seu nome'
+            onChangeText={(nome) => this.setState({nome: nome})}
             />
             <TextInput
             style={estiloCadastro.estiloText}
             placeholder='Digite sua idade'
+            onChangeText={(idade) => this.setState({idade: idade})}
             />
             <TextInput
             style={estiloCadastro.estiloText}
             placeholder='Digite seu E-mail'
+            onChangeText={(email) => this.setState({email: email})}
             />
-            <TouchableHighlight>
+            <TouchableHighlight onPress={() => 
+                {this.props.navigation.navigate('perfil', 
+                {nome: this.state.nome, idade: this.state.idade, email: this.state.email})}}
+            >
                 <View style={estiloCadastro.button}>
                     <Text style={estiloCadastro.buttonText}> ENVIAR </Text>
                 </View>
             </TouchableHighlight>
-
-            <View>
-                <Modal
-                animationType="slide"
-                transparent={true}
-                visible={modalVisible}
-                onRequestClose={() => {
-                Alert.alert('Modal has been closed.');
-                }}>
-                <View style={estiloCadastro.centeredView}>
-                <View style={estiloCadastro.modalView}>
-                <Text style={estiloCadastro.modalText}>Hello World!</Text>
-
-                <TouchableHighlight
-                onPress={() => {
-                    setModalVisible(!modalVisible);
-                    }}>
-                <Text style={estiloCadastro.textStyle}>Hide Modal</Text>
-                </TouchableHighlight>
-                </View>
-                </View>
-                </Modal>
-
-                <TouchableHighlight
-                style={estiloCadastro.openButton}
-                onPress={() => {
-                setModalVisible(true);
-                }}>
-                <Text style={estiloCadastro.textStyle}>Show Modal</Text>
-                </TouchableHighlight>
-            </View>
-
         </View>
-    );
+
+        );
+    }
 }
+    
 
 const estiloCadastro = StyleSheet.create({
     container: {
         flexDirection: 'column',
-        marginTop: 100,
+        width: '100%',
+        height: '100%',
         alignItems: 'center',
         justifyContent: 'center',
+        backgroundColor: '#41436A'
     },
     text: {
         fontSize: 30,
@@ -76,16 +62,17 @@ const estiloCadastro = StyleSheet.create({
     estiloText: {
         height: 45,
         width: 300,
-        borderColor: "pink",
+        borderColor: "white",
         borderWidth: 2,
         paddingLeft: 20,
-        marginBottom: 20 
+        marginBottom: 20,
+        backgroundColor: 'white'
     },
     button:{
         alignItems: 'center',
         width: 150,
         height: 45,
-        backgroundColor: 'pink',
+        backgroundColor: '#F64668',
     },
     buttonText:{
         padding: 13,

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { View, StyleSheet, Text, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
@@ -37,12 +37,13 @@ const estiloHome = StyleSheet.create({
         alignItems: 'center',
         width: '100%',
         height: '100%',
+        backgroundColor: '#41436A'
     },
     button:{
         marginBottom: 30,
         alignItems: 'center',
         width: 260,
-        backgroundColor: 'pink',
+        backgroundColor: '#F64668',
         borderRadius: 5
     },
     buttonText:{

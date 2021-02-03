@@ -18,15 +18,23 @@ export default function Sobre(){
 const estiloSobre = StyleSheet.create({
     container: {
         flexDirection: 'column',
-        textAlign: 'center',
+        alignItems: 'center',
         justifyContent: 'center',
+        width: '100%',
+        height: '100%',
+        backgroundColor: '#41436A',
+        paddingBottom: 100,
     },
     titulo: {
         fontSize: 30,
-        padding: 20,
-        color: 'pink',
-        fontWeight: 'bold'
+        color: '#F64668',
+        fontWeight: 'bold',
+        textAlign: 'center'
     },
     texto: {
+        width: 300,
+        color: 'white',
+        padding: 20,
+        textAlign: 'center'
     }
 });

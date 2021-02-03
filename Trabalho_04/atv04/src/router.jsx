@@ -8,6 +8,8 @@ import Home from './componentes/Home';
 import Cadastro from './componentes/Cadastro';
 import Sobre from './componentes/Sobre';
 import IMCalc from './componentes/IMCalc';
+import Resultado from './componentes/Resultado';
+import Perfil from './componentes/Perfil';
 
 const Stack = createStackNavigator();
 
@@ -25,7 +27,7 @@ export default function Routes(){
                             <Feather
                             name="home"
                             size={24}
-                            color='grey'
+                            color='#F64668'
                             />
                         </TouchableOpacity>
                     )
@@ -58,7 +60,24 @@ export default function Routes(){
                     )
                 }} 
                 />
-                
+                <Stack.Screen name="resultado"
+                component={Resultado}
+                options={{
+                    title: 'RESULTADO',
+                    headerRight: () => (
+                        <TouchableOpacity style={{marginRight: 15}} />
+                    )
+                }} 
+                />
+                <Stack.Screen name="perfil"
+                component={Perfil}
+                options={{
+                    title: 'PERFIL',
+                    headerRight: () => (
+                        <TouchableOpacity style={{marginRight: 15}} />
+                    )
+                }} 
+                />
             </Stack.Navigator>
         </NavigationContainer>
     );

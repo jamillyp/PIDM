@@ -8,19 +8,7 @@ export default class IMCalc extends Component {
             altura: null, 
             peso: null,
         };
-        this.calcularImc = this.calcularImc.bind(this)
     };
-
-    calcularImc = ()=>{
-        const imc = this.state.peso/(this.state.altura*this.state.altura)
-        if(imc<17) return (<Text>Você está muito abaixo do peso!</Text>);
-        if(imc>=17 && imc<=18.49) return (<Text>Você está abaixo do peso!</Text>);
-        if(imc>=18.5 && imc<=24.99) return (<Text>Você está com peso normal!</Text>);
-        if(imc>=25 && imc<=29.99) return (<Text>Você está acima do peso!</Text>);
-        if(imc>=30 && imc<=34.99) return (<Text>Você está com Obesidade I!</Text>);
-        if(imc>=35 && imc<=39.99) return (<Text>Você está com Obesidade II (severa)!</Text>);
-        if(imc>40) return (<Text>Você está com Obesidade III (mórbida)!</Text>);
-    }
 
     render() {
         
@@ -43,7 +31,7 @@ export default class IMCalc extends Component {
             />
 
             <TouchableOpacity
-            onPress={this.calcularImc}
+            onPress={() => {this.props.navigation.navigate('resultado', {peso: this.state.peso, altura: this.state.altura})}}
             style={estiloIMC.button}
             >
             <Text style={estiloIMC.buttonText}>Calcular</Text>
@@ -60,21 +48,25 @@ const estiloIMC = StyleSheet.create({
         flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center',
-        marginTop: 100,
+        width: '100%',
+        height: '100%',
+        backgroundColor: '#41436A'
     },
     estiloText: {
         height: 45,
         width: 300,
-        borderColor: "pink",
+        borderColor: "white",
         borderWidth: 2,
         paddingLeft: 20,
-        marginBottom: 20 
+        marginBottom: 20,
+        backgroundColor: 'white' 
     },
     button:{
         alignItems: 'center',
         width: 150,
         height: 45,
-        backgroundColor: 'pink',
+        backgroundColor: '#F64668',
+
     },
     buttonText:{
         padding: 13,
@@ -83,7 +75,7 @@ const estiloIMC = StyleSheet.create({
     text: {
         fontSize: 30,
         padding: 20,
-        color: 'pink',
+        color: '#F64668',
         fontWeight: 'bold'
     }
 
