@@ -1,14 +1,14 @@
 import React from 'react';
 import { View } from 'react-native';
 
-import Albums from './src/components/Albums.jsx';
-import Header from './src/components/Header.jsx'
+import Header from './src/components/Header';
+import AlbumList from './src/components/AlbumList';
 
 export default function App() {
   return (
     <View>
       <Header title='Albums' />
-      <Albums />
+      <AlbumList />
     </View>
   );
 }
