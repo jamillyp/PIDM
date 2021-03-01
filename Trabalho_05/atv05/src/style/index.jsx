@@ -1,12 +1,19 @@
 import { StyleSheet } from 'react-native';
 
 const style = StyleSheet.create({
-    header: {
-        backgroundColor: 'pink',
-        textAlign: 'center',
+    viewContainer:{
         justifyContent: 'center',
-        padding: 10
+        alignItems: 'center',
+        height: 60,
+        backgroundColor: 'pink',
+        width: '100%',
+        elevation: 10,
     },
+    textStyle:{
+        fontSize: 20,
+        textTransform: 'uppercase',
+        fontWeight: 'bold'
+    }
 
 });
 
