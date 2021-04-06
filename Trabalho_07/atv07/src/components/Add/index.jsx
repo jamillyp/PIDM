@@ -57,7 +57,7 @@ const Add = () => {
             </TouchableHighlight>
 
             {cursos.map((curso) => {
-              return <TouchableHighlight title="Sim" onPress={() => deletar(curso.id)} style={{top: 250, alignItems: 'center', backgroundColor: '#90EE90', width: 60, height: 40, textAlign: 'center', justifyContent: 'center', fontWeight: 'bold'}}>
+              return <TouchableHighlight title="Sim" onPress={() => deletar(curso.id)} style={{top: 250, alignItems: 'center', backgroundColor: '#FF6600', width: 60, height: 40, textAlign: 'center', justifyContent: 'center', fontWeight: 'bold'}}>
               <Text style={{color: 'white'}}> Sim </Text> 
             </TouchableHighlight>
             })}
@@ -111,13 +111,7 @@ const Add = () => {
                   <Feather name="x" size={30} color="#FF6961" />
                 </Text>
               </TouchableHighlight>
-              <TouchableHighlight style={styles.button2} title='Editar'>
-                <Text style={styles.textButton}>
-                <Feather name="edit" size={30} color="#FDFD96" />
-                </Text>
-              </TouchableHighlight>
             </View>
-
           </View>
           
         })}
@@ -145,20 +139,25 @@ const styles = StyleSheet.create({
     backgroundColor: 'white'
   },
   text: {
-    color: 'white'
+    color: 'white',
+    fontWeight: 'bold',
+    fontSize: 14,
+    paddingLeft: 11
   },
   button: {
     justifyContent: 'center',
     width: '80%',
     height: '8%',
-    backgroundColor: '#90EE90'
+    backgroundColor: '#FF6600'
   },
   viewButton: {
-    marginBottom: 10,
+    marginBottom: 3,
     flexDirection: 'row',
     width: '50%',
+    alignItems: 'center',
     justifyContent: 'space-around',
-    paddingLeft: 10
+    backgroundColor: '#93E9BE',
+    height: 50
   },
   button2: {
     justifyContent: 'center',
@@ -168,6 +167,7 @@ const styles = StyleSheet.create({
     fontSize: 15,
     textAlign: 'center',
     color: 'white',
+    
   },
   view: {
     flexDirection: 'row',
