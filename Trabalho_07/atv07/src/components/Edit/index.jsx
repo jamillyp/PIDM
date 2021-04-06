@@ -47,6 +47,8 @@ const Edit = () => {
     >
 
       <View style={styles.container}>
+        <Text style={{fontSize: 20, marginBottom: 20, fontWeight: 'bold'}}>DIGITE E CLIQUE!</Text>
+        <Text style={{fontSize: 12, marginBottom: 20, color: '#FF6600'}}>*Caso existam cadastros salvos, basta digitar e clicar em quem deseja atualizar</Text>
           <TextInput 
           style={styles.textInput}
           label="qual o nome do curso?"
@@ -60,22 +62,12 @@ const Edit = () => {
           placeholder="qual o(a) coordenador(a)?" 
           value={ coordenador } 
           onChangeText={ setCoordenador } />
-          {cursos.map((curso) => {
-          return <TouchableHighlight
-          title="Inserir" 
-          onPress={ () => editar(curso.id) }
-          style={styles.button}
-          >
-            <Text style={styles.textButton}>
-                SALVAR
-            </Text>
-          </TouchableHighlight>
-        })}
+          
       
         {cursos.map((curso) => {
           return <View style={styles.view}>
             <View style={styles.viewButton}>
-              <Text key={ curso.id } style={styles.text}> { curso.nome } - { curso.coordenador }</Text>
+              <Text key={ curso.id } style={styles.text} onPress={ () => editar(curso.id) }> { curso.nome } - { curso.coordenador }</Text>
             </View>
           </View>
         })}
@@ -92,7 +84,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     width: '100%',
-    backgroundColor: '#20B2AA',
+    backgroundColor: '#F9EAC3',
   },
   textInput: {
     paddingLeft: 10,

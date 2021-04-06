@@ -50,7 +50,7 @@ const Add = () => {
           <Text style={{top: 200, marginLeft: 120, fontSize: 20, fontWeight: 'bold'}}>Deseja excluir?</Text>
 
           <View style={{flexDirection: 'row', alignItems: 'center', justifyContent: 'center',}}>
-            <TouchableHighlight title="Não" onPress={() => setState(false)} style={{top: 250, alignItems: 'center', backgroundColor: '#20B2AA', width: 60, height: 40, textAlign: 'center', justifyContent: 'center', marginRight: 20, fontWeight: 'bold'}}>
+            <TouchableHighlight title="Não" onPress={() => setState(false)} style={{top: 250, alignItems: 'center', backgroundColor: '#93E9BE', width: 60, height: 40, textAlign: 'center', justifyContent: 'center', marginRight: 20, fontWeight: 'bold'}}>
               <Text style={{color: 'white'}}>
                 Não
               </Text>
@@ -73,6 +73,8 @@ const Add = () => {
     >
 
       <View style={styles.container}>
+
+        <Text style={{fontSize: 20, marginBottom: 20, fontWeight: 'bold'}}>CADASTRE UM CURSO</Text>
 
         <TextInput 
         style={styles.textInput}
@@ -128,7 +130,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     width: '100%',
-    backgroundColor: '#20B2AA',
+    backgroundColor: '#F9EAC3',
   },
   textInput: {
     paddingLeft: 10,

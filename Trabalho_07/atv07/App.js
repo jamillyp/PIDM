@@ -11,7 +11,7 @@ const Tab = createBottomTabNavigator();
 function MyTabs() {
   return (
     <Tab.Navigator>
-      <Tab.Screen name="Inserir/Deletar" component={Add} options={{ tabBarBadge: 3 }} />
+      <Tab.Screen name="Inserir/Deletar" component={Add} options={{  }} />
       <Tab.Screen name="Editar/Atualizar" component={Edit} />
     </Tab.Navigator>
   );
